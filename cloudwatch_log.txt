@@ -1,0 +1,28 @@
+* IAM 
+* JSON Script
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "logs:DescribeLogStreams"
+    ],
+      "Resource": [
+        "arn:aws:logs:*:*:*"
+    ]
+  }
+ ]
+}
+
+* Install cloudwatch logs agent
+
+$ sudo apt-get update
+
+$ curl https://s3.amazonaws.com/aws-cloudwatch/downloads/latest/awslogs-agent-setup.py -O
+
+$ sudo python3 ./awslogs-agent-setup.py --region us-east-1 
